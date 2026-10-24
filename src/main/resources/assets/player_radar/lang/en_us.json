@@ -1,0 +1,5 @@
+{
+  "key.player_radar.open": "Open Player Radar GUI",
+  "key.player_radar.toggle": "Start/stop packet test",
+  "category.player_radar": "Player Radar"
+}

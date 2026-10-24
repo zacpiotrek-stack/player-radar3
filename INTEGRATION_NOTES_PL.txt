@@ -1,0 +1,15 @@
+Bezpieczny pakiet źródłowy — Minecraft 1.21.4 / Fabric / Java 21
+
+Co zmieniono w projekcie testowym:
+- test kończy się automatycznie po 30 sekundach;
+- limit wynosi maksymalnie 5 pakietów na sekundę;
+- test działa tylko w lokalnym świecie singleplayer (sprawdzenie client.getServer());
+- dodano NetworkPacketSender.java z limitem 1–5 pakietów/s i automatycznym timeoutem 30 s.
+
+WAŻNE: To jest źródłowy projekt testowy, a nie gotowy, połączony plik JAR z Twoim PlayerRadar.
+Dostarczony PlayerRadar-1.21.4-bomba-1.5.0.jar zawiera skompilowane klasy, a nie źródła RadarScreen/BombaHelper,
+więc nie da się rzetelnie wpiąć wysyłania bez odtworzenia/edycji kodu tych klas. Nie nadpisuje to oryginalnego JAR-a.
+
+Budowanie: JDK 21 + Gradle, w tym katalogu uruchom `gradle build`.
+JAR powinien pojawić się w build/libs/. Nie mogłem tutaj skompilować ani zweryfikować projektu,
+więc przed użyciem sprawdź kompilację i testuj wyłącznie na własnym środowisku.

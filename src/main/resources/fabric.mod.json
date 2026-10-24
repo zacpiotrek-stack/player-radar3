@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "player_radar",
+  "version": "${version}",
+  "name": "Player Radar Packet Test",
+  "description": "Local test mod with key-8 GUI and a capped custom-payload sender.",
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["example.playerradar.PlayerRadar"],
+    "client": ["example.playerradar.PlayerRadarClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

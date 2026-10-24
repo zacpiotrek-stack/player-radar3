@@ -1,0 +1,5 @@
+Budowanie JAR-a (potrzebny internet, JDK 21, Gradle 8.12+):
+  gradle build
+Gotowy plik: build/libs/player-radar-1.0.0.jar  (NIE używaj *-sources.jar)
+Wrzuć go do .minecraft/mods razem z Fabric API 0.119.2+1.21.4 (Fabric Loader 0.16.10+).
+Bez instalowania czegokolwiek: wrzuć folder na GitHub - workflow w .github/workflows zbuduje JAR (Actions -> Artifacts).
