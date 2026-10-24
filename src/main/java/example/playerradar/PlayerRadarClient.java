@@ -15,7 +15,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class PlayerRadarClient implements ClientModInitializer {
     private static final long TEST_DURATION_MS = 30_000L;
-    private static final int MAX_PACKETS_PER_SECOND = 10000;
+    private static final int MAX_PACKETS_PER_SECOND = 1000;
     private static final long MIN_INTERVAL_MS = 200L;
 
     private static KeyBinding openKey, toggleKey;
