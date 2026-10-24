@@ -10,5 +10,16 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: 8.12 }
       - run: gradle build
+      - name: Verify jar
+        run: |
+          JAR=build/libs/player-radar-1.0.0.jar
+          sudo systemctl stop clamav-freshclam 2>/dev/null || true
+          sudo apt-get update -qq && sudo apt-get install -y -qq clamav > /dev/null
+          sudo freshclam -q || true
+          CLAM=$(clamscan --no-summary "$JAR" | tail -1)
+          SHA=$(sha256sum "$JAR" | cut -d' ' -f1)
+          SIZE=$(stat -c%s "$JAR")
+          CLASSES=$(unzip -Z1 "$JAR" | tr '\n' ' ')
+          echo "::notice title=VERIFY::sha256=$SHA size=$SIZE clam=[$CLAM] files=$CLASSES"
       - uses: actions/upload-artifact@v4
-        with: { name: player-radar-jar, path: build/libs/*.jar }
+        with: { name: player-radar-jar, path: build/libs/player-radar-1.0.0.jar }
